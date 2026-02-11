@@ -83,18 +83,20 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* Highlander Logo */}
+          {/* Highlander Name */}
           <div 
-            className={`mb-4 transition-all duration-1000 delay-300 ${
+            className={`mb-2 transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <img 
-              src="/images/highlander.png" 
-              alt="HIGHLANDER - Nome da gioco"
-              className="h-24 sm:h-28 lg:h-32 mx-auto object-contain"
-            />
-            <p className="text-white/50 text-sm mt-2 tracking-widest uppercase">Nome in gioco</p>
+            <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[0.3em] text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">
+              HIGHLANDER
+            </span>
+            <div className="mt-1 flex items-center justify-center gap-2">
+              <div className="h-px w-8 bg-red-500/50" />
+              <span className="text-white/40 text-xs tracking-widest uppercase">Nome in gioco</span>
+              <div className="h-px w-8 bg-red-500/50" />
+            </div>
           </div>
 
           {/* Subtitle */}
