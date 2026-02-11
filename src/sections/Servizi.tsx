@@ -1,131 +1,166 @@
-import { Shield, Video, ClipboardCheck, Lock, Home, Building2 } from 'lucide-react';
+import { Target, Clock, Trophy, Gamepad2, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const servizi = [
+const piani = [
   {
-    icon: Shield,
-    title: 'Impianti di Allarme',
-    description: 'Sistemi di allarme anti-intrusione per casa e ufficio con sensori volumetrici, perimetrali e connessione diretta alla centrale operativa.',
-    image: '/images/servizio-allarme.jpg',
+    icon: Target,
+    title: 'Coaching per Obiettivi',
+    description: 'Percorso personalizzato basato sui tuoi obiettivi specifici: raggiungere Divisione 1, migliorare il ranking, prepararti per tornei.',
+    prezzo: 'Su misura',
+    prezzoLabel: 'Preventivo personalizzato',
+    features: [
+      'Analisi del tuo profilo e obiettivi',
+      'Piano di allenamento dedicato',
+      'Sessioni teoriche e pratiche',
+      'Analisi replay post-partita',
+      'Supporto continuo via chat',
+    ],
+    cta: 'Richiedi Preventivo',
+    popular: true,
   },
   {
-    icon: Video,
-    title: 'Videosorveglianza',
-    description: 'Telecamere HD e 4K con visione notturna, registrazione cloud e accesso remoto da smartphone per un controllo totale 24/7.',
-    image: '/images/servizio-videosorveglianza.jpg',
-  },
-  {
-    icon: ClipboardCheck,
-    title: 'Progettazione e Validazione',
-    description: 'Analisi dei rischi, progettazione su misura e validazione tecnica degli impianti di sicurezza per normative vigenti.',
-    image: '/images/servizio-progettazione.jpg',
-  },
-  {
-    icon: Lock,
-    title: 'Controllo Accessi',
-    description: 'Sistemi di gestione accessi con badge, biometrici e intercom per un controllo completo degli ingressi.',
-    image: '/images/servizio-controllo-accessi.jpg',
-  },
-];
-
-const aree = [
-  {
-    icon: Home,
-    title: 'Sicurezza Privata',
-    description: 'Proteggi la tua casa e la tua famiglia con sistemi all\'avanguardia.',
-    image: '/images/casa-sicura.jpg',
-  },
-  {
-    icon: Building2,
-    title: 'Sicurezza Commerciale',
-    description: 'Soluzioni personalizzate per negozi, uffici e attività commerciali.',
-    image: '/images/commerciale-sicuro.jpg',
+    icon: Clock,
+    title: 'Coaching a Ore',
+    description: 'Sessioni flessibili da prenotare quando vuoi. Ideale per chi ha esigenze specifiche o vuole provare il servizio.',
+    prezzo: '25€',
+    prezzoLabel: 'a partire da /ora',
+    features: [
+      'Sessione 1-to-1 live',
+      'Analisi gameplay in diretta',
+      'Consigli personalizzati',
+      'Esercizi pratici',
+      'Domande e risposte',
+    ],
+    cta: 'Prenota Ora',
+    popular: false,
   },
 ];
 
 export function Servizi() {
+  const scrollToContatti = () => {
+    const element = document.querySelector('#contatti');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="servizi" className="py-24 bg-white">
+    <section id="servizi" className="py-24 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-[#e67e22] font-semibold text-sm tracking-wider uppercase mb-4">
-            I Nostri Servizi
+          <span className="inline-block text-red-500 font-semibold text-sm tracking-wider uppercase mb-4">
+            Tariffario
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a3d62] mb-6">
-            Soluzioni di Sicurezza Complete
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 font-['Orbitron']">
+            Scegli il tuo percorso
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Dalla progettazione all'installazione, offriamo servizi di sicurezza 
-            completi per la protezione di ambienti residenziali e commerciali.
+          <p className="text-white/60 text-lg max-w-3xl mx-auto">
+            Due modalità per raggiungere i tuoi obiettivi: un percorso completo su misura 
+            oppure sessioni flessibili a ore.
           </p>
         </div>
 
-        {/* Servizi Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {servizi.map((servizio, index) => (
+        {/* Piani Grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {piani.map((piano, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              className={`relative rounded-2xl p-8 transition-all duration-300 ${
+                piano.popular 
+                  ? 'bg-gradient-to-br from-red-600/20 to-blue-600/20 border-2 border-red-500/50' 
+                  : 'bg-white/5 border border-white/10 hover:border-white/20'
+              }`}
             >
-              <div className="relative h-56 overflow-hidden">
-                <img 
-                  src={servizio.image} 
-                  alt={servizio.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a3d62]/80 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="w-12 h-12 bg-[#e67e22] rounded-xl flex items-center justify-center mb-3">
-                    <servizio.icon className="w-6 h-6 text-white" />
-                  </div>
+              {piano.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    Consigliato
+                  </span>
+                </div>
+              )}
+
+              {/* Icona */}
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
+                piano.popular ? 'bg-red-600' : 'bg-white/10'
+              }`}>
+                <piano.icon className="w-8 h-8 text-white" />
+              </div>
+
+              {/* Titolo */}
+              <h3 className="text-2xl font-bold text-white mb-3">
+                {piano.title}
+              </h3>
+
+              {/* Descrizione */}
+              <p className="text-white/60 mb-6">
+                {piano.description}
+              </p>
+
+              {/* Prezzo */}
+              <div className="mb-8">
+                <div className="text-4xl font-bold text-white mb-1">
+                  {piano.prezzo}
+                </div>
+                <div className="text-white/50 text-sm">
+                  {piano.prezzoLabel}
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#0a3d62] mb-3">
-                  {servizio.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {servizio.description}
-                </p>
-              </div>
+
+              {/* Features */}
+              <ul className="space-y-3 mb-8">
+                {piano.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80">
+                    <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
+                      piano.popular ? 'bg-red-600/20' : 'bg-white/10'
+                    }`}>
+                      <ArrowRight className={`w-3 h-3 ${piano.popular ? 'text-red-500' : 'text-white/60'}`} />
+                    </div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA */}
+              <Button 
+                onClick={scrollToContatti}
+                className={`w-full py-6 font-semibold ${
+                  piano.popular 
+                    ? 'bg-red-600 hover:bg-red-700 text-white' 
+                    : 'bg-white/10 hover:bg-white/20 text-white'
+                }`}
+              >
+                {piano.cta}
+              </Button>
             </div>
           ))}
         </div>
 
-        {/* Aree di intervento */}
-        <div className="bg-gray-50 rounded-3xl p-8 lg:p-12">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#0a3d62] mb-4">
-              Sicurezza per ogni esigenza
-            </h3>
-            <p className="text-gray-600">
-              Soluzioni personalizzate sia per il settore privato che commerciale
-            </p>
-          </div>
+        {/* Nota */}
+        <div className="mt-12 text-center">
+          <p className="text-white/40 text-sm">
+            * I prezzi a ore partono da 25€. Il costo può variare in base al livello e alle esigenze specifiche.
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {aree.map((area, index) => (
-              <div 
-                key={index}
-                className="relative rounded-2xl overflow-hidden group"
-              >
-                <img 
-                  src={area.image} 
-                  alt={area.title}
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a3d62]/90 via-[#0a3d62]/50 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#e67e22] rounded-lg flex items-center justify-center">
-                      <area.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white">{area.title}</h4>
-                  </div>
-                  <p className="text-white/90">{area.description}</p>
-                </div>
-              </div>
-            ))}
+        {/* CTA Section */}
+        <div className="mt-20 text-center">
+          <div className="bg-gradient-to-r from-red-600/10 via-blue-600/10 to-red-600/10 rounded-3xl p-8 lg:p-12 border border-white/10">
+            <Gamepad2 className="w-12 h-12 text-red-500 mx-auto mb-6" />
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-['Orbitron']">
+              Non sai quale scegliere?
+            </h3>
+            <p className="text-white/60 mb-6 max-w-2xl mx-auto">
+              Contattami per una consulenza gratuita. Analizzeremo il tuo livello attuale 
+              e ti consiglierò il percorso più adatto a te.
+            </p>
+            <Button 
+              onClick={scrollToContatti}
+              className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-6"
+            >
+              <Trophy className="w-5 h-5 mr-2" />
+              Inizia Ora
+            </Button>
           </div>
         </div>
       </div>
