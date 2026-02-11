@@ -121,6 +121,14 @@ export function Footer() {
             <p className="text-white/40 text-sm">
               © {new Date().getFullYear()} Christian - eFootball Coach. Tutti i diritti riservati.
             </p>
+            <a 
+              href="https://www.attila-lab.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/50 text-sm hover:bg-white/10 hover:text-white hover:border-red-500/50 transition-all"
+            >
+              Powered by <span className="font-semibold text-red-500">Attila-Lab</span>
+            </a>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-white/40 hover:text-red-500 transition-colors">
                 Privacy Policy
