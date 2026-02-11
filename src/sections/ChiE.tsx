@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Check, Gamepad2, Brain, Target, TrendingUp, Award } from 'lucide-react';
+import { Check, Gamepad2, Brain, Target, TrendingUp, Award, Trophy, Medal } from 'lucide-react';
 
 const skills = [
   { icon: Gamepad2, text: 'Preparazione tecnica avanzata' },
@@ -7,6 +7,19 @@ const skills = [
   { icon: Target, text: 'Lettura tattica in tempo reale' },
   { icon: TrendingUp, text: 'Ottimizzazione delle meccaniche' },
   { icon: Award, text: 'Mentalità da competizione pro' },
+];
+
+const risultati = [
+  { icon: Trophy, text: '🇮🇹 Ex Pro Player PES of Torino FC' },
+  { icon: Medal, text: '🥈 Vice Champion of Italy - Clan TeamProItaly 3vs3 PES League' },
+  { icon: Trophy, text: '🥇 x2 Team 10vs10 PES Eleven Calemun PES' },
+  { icon: Trophy, text: '🥇 x1 🏆 Coppa Internazionale' },
+  { icon: Trophy, text: '🥇 x2 🇮🇹 Campionati AIPC 2019' },
+  { icon: Award, text: '🇮🇹 Top 16 Coverciano' },
+  { icon: Award, text: '🇪🇺 Top 100 eFootball 2026' },
+  { icon: Target, text: '🇪🇺 30W Consecutive eFootball 2026 - Divisione 1 Offline' },
+  { icon: Target, text: '🇪🇺 Top 100 eFootball 2026 - Divisione 1 Online' },
+  { icon: Target, text: '🇪🇺 30W Consecutive eFootball 2026 - Divisione 1 Online' },
 ];
 
 export function ChiE() {
@@ -113,7 +126,7 @@ export function ChiE() {
             </div>
 
             {/* Skills List */}
-            <div className="space-y-4">
+            <div className="space-y-4 mb-10">
               <h3 className="text-white font-semibold mb-4">La sua esperienza comprende:</h3>
               {skills.map((skill, index) => (
                 <div 
@@ -132,6 +145,28 @@ export function ChiE() {
                   <Check className="w-5 h-5 text-red-500 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               ))}
+            </div>
+
+            {/* Risultati / Palmares */}
+            <div className="space-y-4">
+              <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
+                <Trophy className="w-5 h-5 text-red-500" />
+                Palmarès
+              </h3>
+              <div className="grid gap-2">
+                {risultati.map((risultato, index) => (
+                  <div 
+                    key={index}
+                    className={`flex items-center gap-3 p-2 rounded-lg bg-gradient-to-r from-red-600/10 to-transparent border-l-2 border-red-500/50 ${
+                      isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                    }`}
+                    style={{ transitionDelay: `${800 + index * 100}ms` }}
+                  >
+                    <risultato.icon className="w-4 h-4 text-red-500 flex-shrink-0" />
+                    <span className="text-white/80 text-sm">{risultato.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Bottom Text */}

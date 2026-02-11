@@ -1,17 +1,10 @@
-import { Gamepad2, Instagram, Twitter, Youtube, Twitch, Mail } from 'lucide-react';
-
-const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
-  { icon: Twitch, href: '#', label: 'Twitch' },
-];
+import { Gamepad2, Facebook, Mail } from 'lucide-react';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#chi-e', label: 'Chi è' },
+  { href: '#servizi', label: 'Servizi' },
   { href: '#metodo', label: 'Il Metodo' },
-  { href: '#posizionamento', label: 'Per Chi' },
   { href: '#contatti', label: 'Contatti' },
 ];
 
@@ -56,18 +49,17 @@ export function Footer() {
               competitivi che vogliono trasformare il talento in risultati concreti.
             </p>
 
-            {/* Social Links */}
+            {/* Social Link - Solo Facebook */}
             <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-red-600/20 hover:border-red-500/50 border border-transparent transition-all group"
-                >
-                  <social.icon className="w-5 h-5 text-white/60 group-hover:text-red-500 transition-colors" />
-                </a>
-              ))}
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-red-600/20 hover:border-red-500/50 border border-transparent transition-all group"
+              >
+                <Facebook className="w-5 h-5 text-white/60 group-hover:text-red-500 transition-colors" />
+              </a>
             </div>
           </div>
 
@@ -93,6 +85,15 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-white mb-6 font-['Orbitron']">Contatti</h4>
             <div className="space-y-4">
+              <a 
+                href="tel:393485943885"
+                className="flex items-center gap-3 text-white/60 hover:text-red-500 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-red-600/20 transition-colors">
+                  <span className="text-lg">📱</span>
+                </div>
+                <span>39 348 594 3885</span>
+              </a>
               <a 
                 href="mailto:christian@efootballcoach.it"
                 className="flex items-center gap-3 text-white/60 hover:text-red-500 transition-colors group"
