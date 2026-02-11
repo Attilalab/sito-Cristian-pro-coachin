@@ -65,8 +65,8 @@ export function ChiE() {
 
               {/* Floating Badge */}
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-red-600 to-red-800 rounded-xl p-4 shadow-2xl">
-                <div className="text-3xl font-bold text-white">Ex Pro</div>
-                <div className="text-red-200 text-sm">Torino eSport</div>
+                <div className="text-3xl font-bold text-white">Top 16</div>
+                <div className="text-red-200 text-sm">Italia - Coverciano</div>
               </div>
 
               {/* Corner Accents */}
@@ -101,13 +101,14 @@ export function ChiE() {
             {/* Description */}
             <div className="space-y-4 text-white/70 text-lg leading-relaxed mb-8">
               <p>
-                Christian ha militato come giocatore eSport professionista nel{' '}
-                <span className="text-red-500 font-semibold">Torino</span>, competendo ad alto livello 
-                nel panorama competitivo eFootball.
+                Christian ha militato come giocatore eFootball professionista nel{' '}
+                <span className="text-red-500 font-semibold">Torino eSport Serie A</span>, 
+                raggiungendo la classifica <span className="text-red-500 font-semibold">Top 16 in Italia a Coverciano</span>. 
+                Tutto nel mondo eFootball, non nel calcio reale.
               </p>
               <p>
-                Ha vissuto la pressione dei tornei, la gestione dei match decisivi, 
-                l'analisi strategica pre e post partita.
+                Offre risultato assicurato per raggiungere l'obiettivo Divisione 1 e 
+                preparazione per il gioco a livello professionista.
               </p>
             </div>
 
