@@ -74,17 +74,35 @@ export function Hero() {
 
           {/* Main Title */}
           <h1 
-            className={`text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 transition-all duration-1000 delay-200 ${
+            className={`text-5xl sm:text-6xl lg:text-8xl font-bold mb-4 transition-all duration-1000 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             <span className="block text-white font-['Orbitron'] tracking-tight">
               CHRISTIAN
             </span>
-            <span className="block text-2xl sm:text-3xl lg:text-4xl mt-4 text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-blue-500 to-cyan-500 font-['Orbitron']">
-              eFOOTBALL COACH
-            </span>
           </h1>
+
+          {/* Highlander Logo */}
+          <div 
+            className={`mb-4 transition-all duration-1000 delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <img 
+              src="/images/highlander.png" 
+              alt="HIGHLANDER - Nome da gioco"
+              className="h-24 sm:h-28 lg:h-32 mx-auto object-contain"
+            />
+            <p className="text-white/50 text-sm mt-2 tracking-widest uppercase">Nome in gioco</p>
+          </div>
+
+          {/* Subtitle */}
+          <h2 className={`text-2xl sm:text-3xl lg:text-4xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-blue-500 to-cyan-500 font-['Orbitron'] transition-all duration-1000 delay-400 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+            eFOOTBALL COACH
+          </h2>
 
           {/* Subtitle */}
           <p 
