@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navbar } from './sections/Navbar';
 import { Hero } from './sections/Hero';
 import { ChiE } from './sections/ChiE';
+import { Servizi } from './sections/Servizi';
 import { Metodo } from './sections/Metodo';
 import { Posizionamento } from './sections/Posizionamento';
 import { CTA } from './sections/CTA';
@@ -53,6 +54,7 @@ function App() {
       <main className="relative z-10">
         <Hero />
         <ChiE />
+        <Servizi />
         <Metodo />
         <Posizionamento />
         <CTA />
