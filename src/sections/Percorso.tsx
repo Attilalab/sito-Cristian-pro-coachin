@@ -93,7 +93,7 @@ export function Percorso() {
                 className="inline-flex items-center justify-center gap-2 bg-[#e67e22] hover:bg-[#d35400] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                CHIAMA ORA: 391 138 4215
+                CHIAMA ORA: 39 348 594 3885
               </a>
             </div>
           </div>

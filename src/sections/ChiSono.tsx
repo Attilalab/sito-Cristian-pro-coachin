@@ -79,7 +79,7 @@ export function ChiSono() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#e67e22]" />
-                <span>391 138 4215</span>
+                <span>39 348 594 3885</span>
               </div>
             </div>
 

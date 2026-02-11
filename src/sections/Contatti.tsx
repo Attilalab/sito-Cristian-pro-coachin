@@ -10,7 +10,7 @@ const contattiInfo = [
   {
     icon: Phone,
     title: 'Telefono',
-    value: '391 138 4215',
+    value: '39 348 594 3885',
     link: 'tel:3911384215',
   },
   {
