@@ -95,13 +95,13 @@ export function Footer() {
                 <span>39 348 594 3885</span>
               </a>
               <a 
-                href="mailto:christian@efootballcoach.it"
+                href="mailto:365servizi@libero.it"
                 className="flex items-center gap-3 text-white/60 hover:text-red-500 transition-colors group"
               >
                 <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-red-600/20 transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span>christian@efootballcoach.it</span>
+                <span>365servizi@libero.it</span>
               </a>
             </div>
 

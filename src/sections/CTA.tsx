@@ -169,13 +169,13 @@ export function CTA() {
                 <p className="text-center text-white/40 text-sm mb-4">Oppure contattami su</p>
                 <div className="flex justify-center gap-4">
                   <a 
-                    href="#" 
+                    href="mailto:365servizi@libero.it" 
                     className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-600/20 hover:border-red-500/50 border border-transparent transition-all"
                   >
                     <Mail className="w-5 h-5 text-white/60" />
                   </a>
                   <a 
-                    href="#" 
+                    href="tel:393485943885" 
                     className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-green-600/20 hover:border-green-500/50 border border-transparent transition-all"
                   >
                     <MessageCircle className="w-5 h-5 text-white/60" />
